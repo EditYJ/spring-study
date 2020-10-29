@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="student" class="com.edityj.pojo.Student">
+    <property name="name" value="俞杰"/>
+    <!--    ref-->
+    <property name="address" ref="address"/>
+    <!--    Properties-->
+    <property name="info">
+      <value>
+        driver=com.mysql.jdbc.Driver
+        url=jdbc:mysql://localhost:3306/student
+        username=root
+        password=123456
+      </value>
+    </property>
+    <property name="book">
+      <array>
+        <value>悲惨世界</value>
+        <value>三国演义</value>
+        <value>水浒传</value>
+        <value>西游记</value>
+        <value>红楼梦</value>
+      </array>
+    </property>
+    <property name="hobbies">
+      <list>
+        <value>足球</value>
+        <value>羽毛球</value>
+        <value>打游戏</value>
+        <value>跑步</value>
+      </list>
+    </property>
+    <property name="cards">
+      <map>
+        <entry key="id" value="250936"/>
+      </map>
+    </property>
+    <property name="games">
+      <set>
+        <value>LOL</value>
+        <value>黎明杀机</value>
+        <value>彩虹六号</value>
+      </set>
+    </property>
+    <property name="wife">
+      <null/>
+    </property>
+  </bean>
+
+  <bean id="address" class="com.edityj.pojo.Address">
+    <property name="address" value="江苏盐城"/>
+  </bean>
+</beans>
