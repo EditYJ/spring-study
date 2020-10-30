@@ -12,6 +12,7 @@
     <module>spring-01-hello</module>
     <module>spring-02-di</module>
     <module>spring-anno</module>
+    <module>spring-04-javaconfig</module>
   </modules>
 
   <dependencies>
