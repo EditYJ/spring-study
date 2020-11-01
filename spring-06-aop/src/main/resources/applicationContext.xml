@@ -20,14 +20,16 @@
   <!--  </aop:config>-->
 
   <!--  自定义切面类实现aop，简单快速，但是不能获取执行方法的各种信息，有局限性-->
-  <bean id="diylog" class="com.edityj.diylog.Log"/>
-  <aop:config>
-    <aop:pointcut id="point" expression="execution(* com.edityj.service.User.*(..))"/>
+    <bean id="diylog" class="com.edityj.diylog.Log"/>
+  <!--  <aop:config>-->
+  <!--    <aop:pointcut id="point" expression="execution(* com.edityj.service.User.*(..))"/>-->
 
-    <aop:aspect ref="diylog">
-      <aop:before method="beforeLog" pointcut-ref="point"/>
-      <aop:after method="afterLog" pointcut-ref="point"/>
-    </aop:aspect>
-  </aop:config>
+  <!--    <aop:aspect ref="diylog">-->
+  <!--      <aop:before method="beforeLog" pointcut-ref="point"/>-->
+  <!--      <aop:after method="afterLog" pointcut-ref="point"/>-->
+  <!--    </aop:aspect>-->
+  <!--  </aop:config>-->
 
+  <!--  注解实现-->
+  <aop:aspectj-autoproxy/>
 </beans>
