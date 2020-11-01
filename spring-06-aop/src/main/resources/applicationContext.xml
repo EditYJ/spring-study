@@ -11,11 +11,23 @@
   <bean id="log" class="com.edityj.log.Log"/>
   <bean id="afterLog" class="com.edityj.log.AfterLog"/>
 
-  <aop:config>
-    <aop:pointcut id="pointcut" expression="execution(* com.edityj.service.User.*(..))"/>
+  <!--  实现spring原生接口，可以获取执行方法的各种信息，更为强大-->
+  <!--  <aop:config>-->
+  <!--    <aop:pointcut id="pointcut" expression="execution(* com.edityj.service.User.*(..))"/>-->
 
-    <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>
-    <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>
+  <!--    <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>-->
+  <!--    <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+  <!--  </aop:config>-->
+
+  <!--  自定义切面类实现aop，简单快速，但是不能获取执行方法的各种信息，有局限性-->
+  <bean id="diylog" class="com.edityj.diylog.Log"/>
+  <aop:config>
+    <aop:pointcut id="point" expression="execution(* com.edityj.service.User.*(..))"/>
+
+    <aop:aspect ref="diylog">
+      <aop:before method="beforeLog" pointcut-ref="point"/>
+      <aop:after method="afterLog" pointcut-ref="point"/>
+    </aop:aspect>
   </aop:config>
 
 </beans>
