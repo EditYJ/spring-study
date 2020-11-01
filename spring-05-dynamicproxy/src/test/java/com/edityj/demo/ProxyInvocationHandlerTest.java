@@ -11,7 +11,7 @@ public class ProxyInvocationHandlerTest {
     User user = new UserImpl();
 
     final ProxyInvocationHandler handler = new ProxyInvocationHandler();
-    handler.setUser(user);
+    handler.setTarget(user);
     final User proxy = (User) handler.getProxy();
     proxy.add();
   }
