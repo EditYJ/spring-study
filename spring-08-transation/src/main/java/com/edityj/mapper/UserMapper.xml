@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.edityj.mapper.UserMapper">
+  <select id="getUserList" resultType="user">
+    select *
+    from mybatis_test.user
+  </select>
+  <insert id="insertUser" parameterType="user">
+    insert into mybatis_test.user (id, username, password)
+    VALUES (#{id}, #{username}, #{password});
+  </insert>
+  <delete id="deleteUser">
+    delete
+    from mybatis_test.user
+    where id = #{id}
+  </delete>
+</mapper>
