@@ -9,4 +9,7 @@
   <bean id="userMapper" class="com.edityj.dao.UserMapperImpl">
     <property name="sqlSession" ref="sqlSession"/>
   </bean>
+  <bean id="userMapper2" class="com.edityj.dao.UserMapperImpl2">
+    <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+  </bean>
 </beans>
